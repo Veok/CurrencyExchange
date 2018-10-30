@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun beginSearch() {
         var er: String
-        disposable = currencyService.getUSDCurrency()
+        disposable = currencyService.getCurrency("usd")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result -> txt_search_result.text = "${result.currency} Kupno: ${result.rates[0].bid}" },

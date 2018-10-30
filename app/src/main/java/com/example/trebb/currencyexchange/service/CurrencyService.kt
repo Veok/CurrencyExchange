@@ -8,13 +8,14 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.*
 import io.reactivex.Observable
+import retrofit2.http.Path
+import retrofit2.http.Url
 
 
 interface CurrencyService {
 
-    @GET("exchangerates/rates/c/usd/today/")
-    fun getUSDCurrency(): Observable<Currency>
-
+    @GET("exchangerates/rates/c/{currency}/today/")
+    fun getCurrency(@Path("currency") currency: String): Observable<Currency>
 
     companion object {
         fun create(): CurrencyService {
