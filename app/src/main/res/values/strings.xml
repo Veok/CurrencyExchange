@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CurrencyExchange</string>
+    <string name="bid">Kupno</string>
+    <string name="ask">Sprzedaż</string>
+    <string name="check">Sprawdź</string>
+    <string name="currencyName">Waluta</string>
+    <string name="rate">Kurs</string>
+    <string name="calcualte">Oblicz</string>
 </resources>

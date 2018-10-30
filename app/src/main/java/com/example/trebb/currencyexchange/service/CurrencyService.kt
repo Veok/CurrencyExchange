@@ -13,7 +13,8 @@ import io.reactivex.Observable
 interface CurrencyService {
 
     @GET("exchangerates/rates/c/usd/today/")
-    fun getDollarCurrency(): Observable<Currency>
+    fun getUSDCurrency(): Observable<Currency>
+
 
     companion object {
         fun create(): CurrencyService {
