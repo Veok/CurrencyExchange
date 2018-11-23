@@ -24,8 +24,6 @@ class MainActivity : AppCompatActivity() {
         btn_search.setOnClickListener {
             beginSearch()
         }
-
-        val y = 8;
     }
 
     private fun beginSearch() {
