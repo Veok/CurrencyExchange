@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
         disposable = currencyService.getCurrency("usd")
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ result -> txt_search_result.text = "${result.currency} Kupno: ${result.rates[0].bid}" },
+            .subscribe({ result -> txt_search_result_sell.text = "${result.currency} Kupno: ${result.rates[0].bid}" },
                 { error ->
                     Toast.makeText(this, error.message, Toast.LENGTH_SHORT).show()
                 });
