@@ -14,7 +14,7 @@ import retrofit2.http.Url
 
 interface CurrencyService {
 
-    @GET("exchangerates/rates/c/{currency}/today/")
+    @GET("exchangerates/rates/c/{currency}/")
     fun getCurrency(@Path("currency") currency: String): Observable<Currency>
 
     companion object {
