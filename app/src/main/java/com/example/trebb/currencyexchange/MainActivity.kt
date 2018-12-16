@@ -11,6 +11,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import kotlinx.android.synthetic.main.activity_main.*
+import android.content.Intent
+
+
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,6 +28,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_search.setOnClickListener {
+            val myIntent = Intent(this, CalculatorActivity::class.java)
+            startActivity(myIntent)
         }
 
         currencyChangeListener()
