@@ -12,7 +12,7 @@
     <fragment
             android:layout_width="365dp"
             android:layout_height="198dp" android:name="com.example.trebb.currencyexchange.CurrencyInfo"
-            android:id="@+id/fragment" android:layout_marginTop="8dp"
+            android:id="@+id/fragment2" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"
