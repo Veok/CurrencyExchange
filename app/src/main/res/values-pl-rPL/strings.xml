@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Currency Exchange</string>
+    <string name="bid">Kupno</string>
+    <string name="ask">Sprzedaż</string>
+    <string name="check">Sprawdź</string>
+    <string name="currencyName">Waluta</string>
+    <string name="rate">Kurs</string>
+    <string name="calcualte">Oblicz</string>
+    <string name="count">Oblicz!</string>
+    <string name="spinner_title">Wybierz walutę:</string>
+    <string name="sell">Sprzedaż:</string>
+    <string name="buy">Kupno:</string>
+    <string name="errorWithConnection">Wystąpił błąd podczas połączenia się z serwerem. Proszę spróbować później</string>
+
+</resources>

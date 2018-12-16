@@ -4,7 +4,7 @@
         <item>USD</item>
         <item>EUR</item>
         <item>GBP</item>
-        <item>YEN</item>
+        <item>JPY</item>
         <item>CHF</item>
     </string-array>
 </resources>
