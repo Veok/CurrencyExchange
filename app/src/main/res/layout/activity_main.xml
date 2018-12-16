@@ -10,45 +10,47 @@
 
 
     <TextView
-            android:layout_width="131dp"
-            android:textAlignment="viewEnd"
-            android:layout_height="36dp"
+            android:layout_width="256dp"
+            android:textAlignment="viewStart"
+            android:layout_height="38dp"
             android:textSize="24sp"
             android:id="@+id/buy_result"
             app:layout_constraintEnd_toEndOf="@+id/barrier" android:layout_marginEnd="152dp"
             android:layout_marginRight="152dp"
-            android:gravity="end"
+            android:gravity="start"
             app:layout_constraintTop_toBottomOf="@+id/sell_result"
-            app:layout_constraintStart_toEndOf="@+id/txt_search_result_buy" android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp" android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.25"/>
+            app:layout_constraintStart_toEndOf="@+id/txt_search_result_sell" android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp" android:layout_marginTop="4dp" app:layout_constraintHorizontal_bias="0.0"/>
     <TextView
             android:id="@+id/txt_search_result_sell"
-            android:layout_width="47dp"
+            android:layout_width="176dp"
+            android:layout_height="38dp"
+            android:gravity="end"
+            android:textSize="24sp"
+            android:text="@string/sell"
+            android:layout_marginTop="4dp"
+            android:textAlignment="viewEnd"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/txt_search_result_buy"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.0" android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="8dp"
+    />
+    <TextView
+            android:id="@+id/txt_search_result_buy"
+            android:layout_width="176dp"
             android:layout_height="38dp"
             android:textAlignment="viewEnd"
             android:textSize="24sp"
-            android:text="@string/sell"
-            android:layout_marginStart="44dp"
+            android:text="@string/buy"
+            android:layout_marginStart="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginLeft="44dp"
+            android:layout_marginLeft="8dp"
+            android:textStyle="bold"
             android:layout_marginTop="44dp"
             app:layout_constraintTop_toBottomOf="@+id/fragment2"
             android:gravity="end"/>
-    <TextView
-            android:id="@+id/txt_search_result_buy"
-            android:layout_width="46dp"
-            android:layout_height="39dp"
-            android:gravity="end"
-            android:textSize="24sp"
-            android:text="@string/buy"
-            android:layout_marginTop="4dp"
-            android:textAlignment="viewEnd"
 
-            app:layout_constraintTop_toBottomOf="@+id/txt_search_result_sell"
-            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintVertical_bias="0.0" android:layout_marginStart="44dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="44dp"
-    />
     <Button
             android:id="@+id/btn_search"
             android:layout_width="371dp"
@@ -89,6 +91,7 @@
             android:entries="@array/spinnerItems"
             android:layout_height="58dp"
             android:id="@+id/spinner"
+
             android:textAlignment="center"
             android:background="@color/spinner"
             app:layout_constraintTop_toBottomOf="@+id/txt_search_result_buy"
@@ -99,20 +102,20 @@
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp" android:layout_marginRight="8dp"/>
     <fragment
             android:layout_width="365dp"
-            android:layout_height="181dp" android:name="com.example.trebb.currencyexchange.CurrencyInfo"
+            android:layout_height="198dp" android:name="com.example.trebb.currencyexchange.CurrencyInfo"
             android:id="@+id/fragment2" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:layout_marginRight="8dp"
     />
     <TextView
-            android:layout_width="131dp"
-            android:textAlignment="viewEnd"
-            android:layout_height="37dp"
+            android:layout_width="258dp"
+            android:textAlignment="viewStart"
+            android:layout_height="38dp"
             android:textSize="24sp"
             android:id="@+id/sell_result"
-            android:gravity="end"
-            app:layout_constraintStart_toEndOf="@+id/txt_search_result_sell" android:layout_marginStart="8dp"
+            android:gravity="start"
+            app:layout_constraintStart_toEndOf="@+id/txt_search_result_buy" android:layout_marginStart="8dp"
             android:layout_marginLeft="8dp" android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="@+id/barrier" android:layout_marginRight="8dp"
             app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="44dp"
