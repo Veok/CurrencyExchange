@@ -1,21 +1,28 @@
 package com.example.trebb.currencyexchange
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.widget.AdapterView
 import android.widget.Spinner
 import android.widget.Toast
+import com.example.trebb.currencyexchange.model.Currency
 import com.example.trebb.currencyexchange.service.CurrencyService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_calculator.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
 class MainActivity : AppCompatActivity() {
 
     private var disposable: Disposable? = null
+    private var currency: Currency? = null
+    private var currentFlag: String? = null
+    private var bid: String? = null
+    private var ask: String? = null
 
     private val currencyService by lazy {
         CurrencyService.create()
@@ -25,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_search.setOnClickListener {
+            val myIntent = Intent(this, CalculatorActivity::class.java)
+            myIntent.putExtra("CurrentCurrency", currency?.code)
+            myIntent.putExtra("Ask", ask)
+            myIntent.putExtra("Bid", bid)
+            myIntent.putExtra("CurrentFlag", currentFlag)
+            startActivity(myIntent)
         }
 
         currencyChangeListener()
@@ -61,6 +74,7 @@ class MainActivity : AppCompatActivity() {
         val fm = supportFragmentManager
         val fragment = fm.findFragmentById(R.id.fragment2) as CurrencyInfo
         fragment.changeFlag(p0?.selectedItem.toString())
+        currentFlag = p0?.selectedItem.toString()
     }
 
 
@@ -75,6 +89,9 @@ class MainActivity : AppCompatActivity() {
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result ->
+                this.currency = result
+                ask = result.rates[0].ask.toString()
+                bid = result.rates[0].bid.toString()
                 sell_result.text = "${result.rates[0].ask} PLN"
                 buy_result.text = "${result.rates[0].bid} PLN"
             },

@@ -12,5 +12,7 @@
     <string name="sell">Sprzedaż:</string>
     <string name="buy">Kupno:</string>
     <string name="errorWithConnection">Wystąpił błąd podczas połączenia się z serwerem. Proszę spróbować później</string>
+    <string name="title_activity_calculator">Kalkulator</string>
+    <string name="back">Wróć</string>
 
 </resources>

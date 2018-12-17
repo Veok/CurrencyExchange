@@ -9,7 +9,10 @@
     <string name="count">Calculate!</string>
     <string name="spinner_title">Choose currency:</string>
     <string name="sell">Sell:</string>
+    <string name="back">Back</string>
+
     <string name="buy">Buy:</string>
     <string name="errorWithConnection">Error with getting connection to the server. Please try again later.</string>
+    <string name="title_activity_calculator">Calculator</string>
 
 </resources>
