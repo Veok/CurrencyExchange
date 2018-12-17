@@ -23,7 +23,7 @@
             android:id="@+id/changeCurrency"
             android:layout_width="257dp"
             android:layout_height="34dp"
-
+            android:inputType="none"
             android:clickable="true"
             android:focusable="true"
             android:text="Zamień"
