@@ -12,6 +12,7 @@ import com.example.trebb.currencyexchange.service.CurrencyService
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import kotlinx.android.synthetic.main.activity_calculator.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private var disposable: Disposable? = null
     private var currency: Currency? = null
     private var currentFlag: String? = null
+    private var bid: String? = null
+    private var ask: String? = null
 
     private val currencyService by lazy {
         CurrencyService.create()
@@ -30,9 +33,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         btn_search.setOnClickListener {
             val myIntent = Intent(this, CalculatorActivity::class.java)
-            myIntent.putExtra("CurrentCurrency", currency?.currency)
-            myIntent.putExtra("Ask", currency?.rates?.get(0)?.ask)
-            myIntent.putExtra("Bid", currency?.rates?.get(0)?.bid)
+            myIntent.putExtra("CurrentCurrency", currency?.code)
+            myIntent.putExtra("Ask", ask)
+            myIntent.putExtra("Bid", bid)
             myIntent.putExtra("CurrentFlag", currentFlag)
             startActivity(myIntent)
         }
@@ -87,6 +90,8 @@ class MainActivity : AppCompatActivity() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({ result ->
                 this.currency = result
+                ask = result.rates[0].ask.toString()
+                bid = result.rates[0].bid.toString()
                 sell_result.text = "${result.rates[0].ask} PLN"
                 buy_result.text = "${result.rates[0].bid} PLN"
             },
