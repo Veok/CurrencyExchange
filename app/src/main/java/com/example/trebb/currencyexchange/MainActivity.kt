@@ -32,16 +32,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         btn_search.setOnClickListener {
-            val myIntent = Intent(this, CalculatorActivity::class.java)
-            myIntent.putExtra("CurrentCurrency", currency?.code)
-            myIntent.putExtra("Ask", ask)
-            myIntent.putExtra("Bid", bid)
-            myIntent.putExtra("CurrentFlag", currentFlag)
+            val myIntent = setDataForCalculatorActivity()
             startActivity(myIntent)
         }
 
         currencyChangeListener()
     }
+
 
     override fun onPause() {
         super.onPause()
@@ -77,6 +74,18 @@ class MainActivity : AppCompatActivity() {
         currentFlag = p0?.selectedItem.toString()
     }
 
+
+    /**
+     * Function that sets data that is passed to CalculatorActivity
+     */
+    private fun setDataForCalculatorActivity(): Intent {
+        val myIntent = Intent(this, CalculatorActivity::class.java)
+        myIntent.putExtra("CurrentCurrency", currency?.code)
+        myIntent.putExtra("Ask", ask)
+        myIntent.putExtra("Bid", bid)
+        myIntent.putExtra("CurrentFlag", currentFlag)
+        return myIntent
+    }
 
     /**
      * Function that uses CurrencyService to connect with API and to get current exchange rates.
