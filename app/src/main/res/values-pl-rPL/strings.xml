@@ -14,5 +14,7 @@
     <string name="errorWithConnection">Wystąpił błąd podczas połączenia się z serwerem. Proszę spróbować później</string>
     <string name="title_activity_calculator">Kalkulator</string>
     <string name="back">Wróć</string>
+    <string name="sum">SUMA:</string>
+    <string name="change">Zamień</string>
 
 </resources>
