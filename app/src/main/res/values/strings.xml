@@ -14,5 +14,7 @@
     <string name="buy">Buy:</string>
     <string name="errorWithConnection">Error with getting connection to the server. Please try again later.</string>
     <string name="title_activity_calculator">Calculator</string>
+    <string name="sum">SUM:</string>
+    <string name="change">Change</string>
 
 </resources>
