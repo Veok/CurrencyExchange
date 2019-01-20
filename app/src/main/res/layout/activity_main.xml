@@ -53,7 +53,7 @@
 
     <Button
             android:id="@+id/btn_search"
-            android:layout_width="371dp"
+            android:layout_width="356dp"
             android:layout_height="69dp"
             android:textSize="17sp"
             android:textColor="@android:color/white"
@@ -74,7 +74,7 @@
                                           app:layout_constraintGuide_percent="0.039138943">
     </android.support.constraint.Guideline>
     <TextView
-            android:layout_width="366dp"
+            android:layout_width="353dp"
             android:layout_height="24dp"
             android:text="@string/spinner_title"
             style="@style/InputLabel"
